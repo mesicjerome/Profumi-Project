@@ -7,6 +7,7 @@ import LoginPage from "./views/LoginPage/LoginPage.js";
 import RegisterPage from "./views/RegisterPage/RegisterPage.js";
 import NavBar from "./views/NavBar/NavBar";
 import Footer from "./views/Footer/Footer"
+import ShopPage from "./views/ShopPage/ShopPage";
 import UploadProductPage from "./views/UploadProductPage/UploadProductPage";
 import DetailProductPage from "./views/DetailProductPage/DetailProductPage";
 import CartPage from "./views/CartPage/CartPage";
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/login" component={Auth(LoginPage, false)} />
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
           <Route exact path="/product/upload" component={Auth(UploadProductPage, true)} />
+          <Route exact path="/shop" component={Auth(ShopPage, true)} />
           <Route exact path="/product/:productId" component={Auth(DetailProductPage, null)} />
           <Route exact path="/user/cart" component={Auth(CartPage, true)} />
           <Route exact path="/History" component={Auth(HistoryPage, true)} />

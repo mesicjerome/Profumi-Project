@@ -30,10 +30,7 @@ function ProductInfo(props) {
                 <Descriptions.Item label="Quantité"> {Product.size} ml</Descriptions.Item>
                 <Descriptions.Item label="Prix"> {Product.price} €</Descriptions.Item>
                 <Descriptions.Item label="Acheté">{Product.sold} fois</Descriptions.Item>
-                <Descriptions.Item label="Produit consulté">
-                    
-                    {Product.views} fois
-                </Descriptions.Item>
+                
                 
             </Descriptions>
 

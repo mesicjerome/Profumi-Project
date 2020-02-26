@@ -8,7 +8,7 @@ function Footer() {
             flexDirection: 'column', alignItems: 'center',
             justifyContent: 'center', fontSize:'1rem'
         }}>
-           <p> Profumi  <Icon type="fire" /></p>
+           <p> Profumi  <Icon type="copyright" /></p>
         </div>
     )
 }

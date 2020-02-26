@@ -38,6 +38,10 @@ function RightMenu(props) {
           <a href="/history">Mes commandes</a>
         </Menu.Item>
 
+        <Menu.Item key="boutique en ligne">
+          <a href="/shop">Boutique en ligne</a>
+        </Menu.Item>
+
         <Menu.Item key="upload">
           <a style={{marginBottom: -2}} href="/product/upload">Ajouter un produit</a>
         </Menu.Item>
