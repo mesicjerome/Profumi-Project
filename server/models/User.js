@@ -22,9 +22,18 @@ const userSchema = mongoose.Schema({
         type:String,
         maxlength: 50
     },
-    isAdmin : {
-        type:Boolean,
-        default: false
+    adress : {
+        type:String,
+    },
+    zipcode : {
+        type:Number,
+    },
+    city : {
+        type:String,
+    },
+    role: {
+        type: Number,
+        default: 0
     },
     cart: {
         type: Array,
@@ -86,6 +95,8 @@ userSchema.statics.findByToken = function (token, cb) {
     var user = this;
 
     jwt.verify(token,'secret',function(err, decode){
+        // Dans mon userSchema, je veux trouver le user qui à ce userId et ce token.
+        // Si je ne le trouve pas => erreur, si je le trouve => user Informations
         user.findOne({"_id":decode, "token":token}, function(err, user){
             if(err) return cb(err);
             cb(null, user);

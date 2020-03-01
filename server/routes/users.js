@@ -14,6 +14,7 @@ const async = require('async');
 //=================================
 
 router.get("/auth", auth, (req, res) => {
+    // Si l'authentification à lieu = status 200 => j'envois le Json
     res.status(200).json({
         _id: req.user._id,
         isAdmin: req.user.role === 0 ? false : true,
@@ -59,6 +60,7 @@ router.post("/login", (req, res) => {
                 if (err) return res.status(400).send(err);
                 res.cookie("w_authExp", user.tokenExp);
                 res
+                    //"w_auth" est un nom donné, je peux le changer si je le souhaite
                     .cookie("w_auth", user.token)
                     .status(200)
                     .json({
