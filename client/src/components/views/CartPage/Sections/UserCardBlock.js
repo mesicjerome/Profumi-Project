@@ -22,6 +22,9 @@ function UserCardBlock(props) {
                     <strong>{product.creator}</strong>
                     <br/>
                     {product.name}
+                    <br/>
+                    {product.size}ml
+
 
                 </td> 
                 <td>{product.quantity} </td>

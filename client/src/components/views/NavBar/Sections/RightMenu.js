@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 
 function RightMenu(props) {
   const user = useSelector(state => state.user)
+  //const isAdmin = user.isAdmin === true;
 
   const logoutHandler = () => {
     axios.get(`${USER_SERVER}/logout`).then(response => {
@@ -22,6 +23,9 @@ function RightMenu(props) {
   if (user.userData && !user.userData.isAuth) {
     return (
       <Menu mode={props.mode}>
+       <Menu.Item key="boutique en ligne">
+          <a href="/shop">Boutique en ligne</a>
+        </Menu.Item>
         <Menu.Item key="mail">
           <a href="/login">Se connecter</a>
         </Menu.Item>
@@ -30,29 +34,30 @@ function RightMenu(props) {
         </Menu.Item>
       </Menu>
     )
+  
   } else {
     return (
       <Menu mode={props.mode}>
 
-        <Menu.Item key="history">
-          <a href="/history">Mes commandes</a>
-        </Menu.Item>
-
-        <Menu.Item key="boutique en ligne">
+       <Menu.Item key="boutique en ligne">
           <a href="/shop">Boutique en ligne</a>
         </Menu.Item>
-
-        <Menu.Item key="upload">
-          <a style={{marginBottom: -2}} href="/product/upload">Ajouter un produit</a>
-        </Menu.Item>
-
-        <Menu.Item key="cart" style={{ paddingBottom: 3}}>
+       
+       <Menu.Item key="cart" style={{ paddingBottom: 3}}>
           <Badge count={user.userData && user.userData.cart.length}>
             <a href="/user/cart" style={{ marginRight: -22 , color:'#667777'}}>
               <Icon type="shopping-cart" style={{ fontSize: 30, marginBottom: 3 }} />
             </a>
           </Badge>
         </Menu.Item>
+
+        <Menu.Item key="history">
+          <a href="/history">Mes commandes</a>
+        </Menu.Item>
+
+        <Menu.Item key="upload">
+          <a style={{marginBottom: -2}} href="/product/upload">Ajouter un produit</a>
+        </Menu.Item> 
 
         <Menu.Item key="logout">
           <a onClick={logoutHandler}>Deconnexion</a>

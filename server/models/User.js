@@ -22,9 +22,9 @@ const userSchema = mongoose.Schema({
         type:String,
         maxlength: 50
     },
-    role : {
-        type:Number,
-        default: 0 
+    isAdmin : {
+        type:Boolean,
+        default: false
     },
     cart: {
         type: Array,

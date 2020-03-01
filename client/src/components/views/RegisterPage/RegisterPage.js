@@ -103,7 +103,7 @@ function RegisterPage(props) {
 
               <Form.Item required label="Prénom">
                 <Input
-                  id="Name"
+                  id="name"
                   placeholder="Votre prénom"
                   type="text"
                   value={values.name}

@@ -60,7 +60,7 @@ function FileUpload(props) {
                 {/*ici avec le Images.map je parcours les images afin d'avoir un rendu visuel à coté de la dropzone, et le delete de l'image en cliquant dessus */}
                 {Images.map((image, index) => (
                     <div onClick={() => onDelete(image)}>
-                        <img style={{ minWidth: '300px', width: '300px', height: '240px' }} src={`http://localhost:5001/${image}`} alt={`productImg-${index}`} />
+                        <img style={{ minWidth: '300px', width: '300px', height: '240px' }} src={`http://localhost:5000/${image}`} alt={`productImg-${index}`} />
                     </div>
                 ))}    
             </div>

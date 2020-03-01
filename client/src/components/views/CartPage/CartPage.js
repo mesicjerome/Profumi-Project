@@ -6,7 +6,7 @@ import {
     onSuccessBuy
 } from '../../../_actions/user_actions';
 import UserCardBlock from './Sections/UserCardBlock';
-import { Result, Empty } from 'antd';
+import { Result, Empty, Button } from 'antd';
 import Axios from 'axios';
 import Paypal from '../../utils/Paypal';
 
@@ -115,6 +115,12 @@ function CartPage(props) {
                     removeItem={removeFromCart}
                 />
 
+            <br/>
+            <br/>
+            <Button href='/shop'>
+                Poursuivre mes achats
+            </Button>
+
 
                 {ShowTotal ?
                     <div style={{ marginTop: '3rem' }}>
@@ -137,7 +143,7 @@ function CartPage(props) {
                         </div>
                 }
             </div>
-
+           
 
 
             {/* Paypal */}
@@ -153,7 +159,7 @@ function CartPage(props) {
 
             }
 
-
+            
 
         </div>
     )

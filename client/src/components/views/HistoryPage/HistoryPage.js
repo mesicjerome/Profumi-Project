@@ -21,7 +21,7 @@ function HistoryPage() {
     return (
         <div style={{ width: '80%', margin: '3rem auto ' }}>
             <div style={{ textAlign: 'center' }}>
-                <h1>Historique des commandes</h1>
+                <h1>Mes commandes</h1>
             </div>
             <br />
             <table>

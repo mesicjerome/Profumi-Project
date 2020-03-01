@@ -41,17 +41,20 @@ router.post("/register", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
+    // Ici je recupere l'email de L'user
     User.findOne({ email: req.body.email }, (err, user) => {
         if (!user)
             return res.json({
                 loginSuccess: false,
-                message: "Auth failed, email not found"
+                message: "Erreur, l'email n'existe pas"
             });
 
+        // Ici je compare le mot de passe 
         user.comparePassword(req.body.password, (err, isMatch) => {
             if (!isMatch)
-                return res.json({ loginSuccess: false, message: "Wrong password" });
+                return res.json({ loginSuccess: false, message: "Le mot de passe ne correspond pas" });
 
+        //Ici je genere le Token
             user.generateToken((err, user) => {
                 if (err) return res.status(400).send(err);
                 res.cookie("w_authExp", user.tokenExp);
