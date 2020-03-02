@@ -90,14 +90,14 @@ function CartPage(props) {
                     }))
 
                 } else {
-                    alert('Failed to buy it')
+                    alert("L'achat est imoossible")
                 }
             })
 
     }
 
     const transactionError = () => {
-        console.log('Paypal error')
+        console.log('Erreur Paypal')
     }
 
     const transactionCanceled = () => {
