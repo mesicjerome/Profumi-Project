@@ -183,7 +183,7 @@ router.post('/successBuy', auth, (req, res) => {
     let history = [];
     let transactionData = {};
 
-    //1.Put brief Payment Information inside User Collection 
+    //1. Ces informations seront envoyer dans la Collection User, dans history
     req.body.cartDetail.forEach((item) => {
         history.push({
             dateOfPurchase: Date.now(),
@@ -195,7 +195,8 @@ router.post('/successBuy', auth, (req, res) => {
         })
     })
 
-    //2.Put Payment Information that come from Paypal into Payment Collection 
+    //2.Les informations suivantes qui viennent de Paypal iront dans la Collection Payment
+    // dans user, data et product
     transactionData.user = {
         id: req.user._id,
         name: req.user.name,
@@ -218,20 +219,19 @@ router.post('/successBuy', auth, (req, res) => {
             const payment = new Payment(transactionData)
             payment.save((err, doc) => {
                 if (err) return res.json({ success: false, err });
-
-                //3. Increase the amount of number for the sold information 
-
-                //first We need to know how many product were sold in this transaction for 
-                // each of products
+                
+                //3. Incrementer le nombre de produit vendu 
+                // ( chaque fois qu'un produit a été acheté par un client ... +1 )
+                // D'abord, je doit savoir combien de produits ont été vendu lors de la commande
+                // Et combien de fois chacun
 
                 let products = [];
                 doc.product.forEach(item => {
                     products.push({ id: item.id, quantity: item.quantity })
                 })
 
-                // first Item    quantity 2
-                // second Item  quantity 3
-
+                // J'utilise async.eachSeries car il peut y avoir 2 exemplaires d'un produit A
+                // Et aussi 3 exemplaires d'un produit B
                 async.eachSeries(products, (item, callback) => {
                     Product.update(
                         { _id: item.id },
