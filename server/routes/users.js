@@ -220,9 +220,9 @@ router.post('/successBuy', auth, (req, res) => {
             payment.save((err, doc) => {
                 if (err) return res.json({ success: false, err });
                 
-                //3. Incrementer le nombre de produit vendu 
+                //3. Incrémenter le nombre de produits vendus 
                 // ( chaque fois qu'un produit a été acheté par un client ... +1 )
-                // D'abord, je doit savoir combien de produits ont été vendu lors de la commande
+                // D'abord, je dois savoir combien de produits ont été vendus lors de la commande
                 // Et combien de fois chacun
 
                 let products = [];
