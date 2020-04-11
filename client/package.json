@@ -6,8 +6,12 @@
     "antd": "^3.24.1",
     "axios": "^0.18.0",
     "formik": "^1.5.8",
+    "lax.js": "^1.2.5",
     "moment": "^2.24.0",
+    "node-sass": "^4.13.1",
     "react": "^16.8.6",
+    "react-animated-css": "^1.2.1",
+    "react-animations": "^1.0.0",
     "react-dom": "^16.8.6",
     "react-dropzone": "^10.2.1",
     "react-icons": "^3.7.0",
@@ -19,6 +23,7 @@
     "redux": "^4.0.0",
     "redux-promise": "^0.6.0",
     "redux-thunk": "^2.3.0",
+    "use-lax": "^3.2.0",
     "yup": "^0.27.0"
   },
   "scripts": {

@@ -13,8 +13,11 @@ import DetailProductPage from "./views/DetailProductPage/DetailProductPage";
 import CartPage from "./views/CartPage/CartPage";
 import HistoryPage from "./views/HistoryPage/HistoryPage";
 import ContactPage from "./views/ContactPage/ContactPage";
+import { useLax } from "use-lax";
 
 function App() {
+  useLax();
+  
   return (
     <Suspense fallback={(<div>Loading...</div>)}>
       <NavBar />
