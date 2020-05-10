@@ -1,27 +1,29 @@
 import React from 'react'
-import { Icon } from 'antd';
+import {
+    MailOutlined,
+    LinkedinOutlined
+  } from '@ant-design/icons';
+import video from '../../../video/flower.mp4'
 
 function ContactPage() {
     return (
-        <div style={{ textAlign: 'center' }} className="fade-in">
+        <div style={{ textAlign: 'center' }} className="fade-in" id="contact-page">
             <div>
-                <h1 id="contact">Nous Contacter</h1>
-           </div>
-           <br />
-           <div id="adress">
-            <h2>Notre adresse</h2>
-            <p>20 rue du Cheval blanc</p>
-            <p>95 100</p>
-            <p>Argenteuil</p>
+                <h1 id="contact">ME CONTACTER</h1>
+            </div>
             <br />
-            <h2>Notre email</h2>
-            <p>Profumi-Store@gmail.com</p>
+            <video className='contactVideo' autoPlay loop muted>
+            <source src={video} type='video/mp4' />
+            </video>
+            <br />
+            <div id="adress">
+            <h2><MailOutlined /> PAR MAIL</h2>
+            <p>mesic.canioni.jerome@gmail.com</p>
             <br />
             <h2>
-                Joindre un conseiller
-                <Icon type="phone" />
+            <LinkedinOutlined /> VIA LINKEDIN 
             </h2>
-            <p>0815 77 78 30</p>
+             <a href="https://www.linkedin.com/in/jerome-mesic/"> Par ici</a>
            </div>
         </div>
     )

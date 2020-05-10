@@ -9,10 +9,8 @@ import {
   Form,
   Input,
   Button,
-  Typography,
 } from 'antd';
 
-const { Title } = Typography;
 
 const formItemLayout = {
   labelCol: {
@@ -101,7 +99,7 @@ function RegisterPage(props) {
         } = props;
         return (
           <div className="app">
-            <Title level={2}>S'inscrire</Title>
+            <h2 id="everyTitle">S'inscrire</h2>
             <Form style={{ minWidth: '375px' }} {...formItemLayout} onSubmit={handleSubmit} >
 
               <Form.Item required label="Prénom">

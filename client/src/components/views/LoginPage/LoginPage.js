@@ -3,10 +3,9 @@ import { withRouter } from "react-router-dom";
 import { loginUser } from "../../../_actions/user_actions";
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import { Form, Icon, Input, Button, Checkbox, Typography } from 'antd';
+import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import { useDispatch } from "react-redux";
 
-const { Title } = Typography;
 
 function LoginPage(props) {
   const dispatch = useDispatch();
@@ -81,7 +80,7 @@ function LoginPage(props) {
         return (
           <div className="app">
 
-            <Title level={2}>Se connecter</Title>
+            <h2 id="everyTitle">Se connecter</h2>
             <form onSubmit={handleSubmit} style={{ width: '350px' }}>
 
               <Form.Item required>

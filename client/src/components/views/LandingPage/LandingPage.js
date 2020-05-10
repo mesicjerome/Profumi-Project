@@ -1,5 +1,5 @@
-import React from 'react'
-import { Animated } from 'react-animated-css';
+import React from 'react';
+import video from '../../../video/flower1.mp4'
 
 
 function LandingPage() {
@@ -12,13 +12,21 @@ function LandingPage() {
                 <br/>
                 <h2 id="begining">Bienvenue sur</h2>
                 <h1 id="title">PROFUMI</h1>
+                <div className="banner">
+                    <video className='videoTag' autoPlay loop muted>
+                    <source src={video} type='video/mp4' />
+                    </video>
+                </div>
                 <br/>
                 <br/>
-                <p >
-                    Decouvrez des parfums de niche ou de designer souvent méconnus du grand public
-                </p>
+                <div id="wrapper">
+                    <h3 id="discover">
+                        <span id="span-landingPage"></span>
+                    </h3>
+                    
+                </div>
                 <br/>
-                <h3> 
+                <h3 id="path" style={{ textAlign: 'center' }} > 
                 Decouvrez notre <a href="/shop" > boutique en ligne</a>
                 </h3>
                 <br/>
@@ -26,8 +34,8 @@ function LandingPage() {
                 <br/>
                 <br/>
                 
-                <p id="history">
-                <h3 id="subtitle">Un peu d'histoire</h3>
+                <p style={{ textAlign: 'center' }} id="history">
+                <h3 style={{ textAlign: 'center' }} id="subtitle">Un peu d'histoire</h3>
                 <br/>
                 Au départ, le parfum de niche décrivait principalement de jeunes Maisons de parfumerie qui tentaient l’aventure et qui, par définition étaient de taille modeste. Pour se démarquer des Maisons traditionnelles, celles-ci se devaient de proposer des fragrances signées, distinctives. Rapidement, un style « parfum de niche » ou « niche fragrance » s’est détaché : des parfums de caractère, proches de la matière première. On a vu apparaître de nombreux vétiver, ambres, cuirs, fleur d’oranger etc. Ce lien avec les ingrédients naturels donna aux Maisons de niche une image d’expertise très positive.
                 <br/>

@@ -29,6 +29,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  
 }
 
 input.error {
@@ -50,7 +51,7 @@ table {
 
 td,th {
   border: 1px solid #dddddd;
-  text-align: left;
+  font-size: 1.2em;
   padding: 8px;
 }
 

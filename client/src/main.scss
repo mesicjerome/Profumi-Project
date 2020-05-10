@@ -3,19 +3,95 @@
     
 }
 
+#contact-page {
+    font-family: The Rustic;
+}
+
 #LandingPage p {
     margin-top: 300pt;
     font-size: 2pt;
     font-weight: 100;
     text-align: center;
-  }
-
-#begining {
-    margin-top: 3vh;
 }
 
+#path {
+    font-family: The Rustic;
+}
+
+#begining {
+    margin-top: 2vh;
+    font-family: The Rustic;
+}
+
+.videoTag{
+    height: 100%;
+    width: 100%;
+    float: left;
+    top: 0;
+    padding: none;
+    //position: fixed; /* optional depending on what you want to do in your app */
+}
+
+.contactVideo {
+    height: 100%;
+    width: 100%;
+    float: left;
+    top: 0;
+    padding: none;
+}
+
+//animation du titre
 #title {
-    font-size: 10vh;
+	background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+	background-size: cover;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 5em;
+    font-family: Al Valenciaga;
+    font-weight: 900;
+}
+
+//SPAN ANIMATION
+#wrapper {
+    font-size: 1.2em;   
+}
+#wrapper h3{
+    text-align: center;
+}
+
+#span-landingPage {
+    font-family: The Rustic;
+    font-weight: 200;
+}
+
+#span-landingPage::before{
+    content: "TOM FORD";
+    animation: animate infinite 10s;
+}
+@keyframes animate {
+    10% {
+        content: "TOM FORD";
+    }
+    25% {
+        content: "INITIO PARFUMS";
+    }
+    50% {
+        content: "MAISON CHRISTIAN DIOR";
+    }
+    75% {
+        content: "PARFUMS DE MARLY";
+    }
+    100% {
+        content: "VALENTINO";
+    }
+}
+
+// titre page login, register, shop
+#everyTitle {
+    margin-top: 2vh;
+    font-family: The Rustic;
 }
 
 #history {
@@ -24,11 +100,12 @@
 
 #subtitle {
     font-size: 3vh;
+    font-family: The Rustic;
 }
 
 //Page de Contact
 #contact {
-    font-size: 6vh
+    font-size: 4vh
 }
 
 /*Styles spécifiques pour les écrans de taille moyenne type tablette*/
@@ -49,15 +126,23 @@
     #adress {
         font-size: 1.5vh
     }
+    .contactVideo {
+        height: 100%;
+        width: 100%;
+        float: left;
+        top: 0;
+        padding: none;
+    }
+    
 }
 
 /*Styles spécifiques pour les grands écrans type écrans d'ordinateur*/
 @media screen and (min-width: 980px){
     #begining {
-        margin-top: 25vh;
+        margin-top: 10vh;
     }
     #title {
-        font-size: 15vh;
+        font-size: 16vh;
     }
     #history {
         margin: 0 6em;
@@ -68,6 +153,15 @@
     }
     #adress {
         font-size: 2.5vh
+    }
+    #wrapper {
+        font-size: 2em;   
+    }
+    .contactVideo {
+        height: 100%;
+        width: 100%;
+        float: left;
+        top: 0;
     }
     
 }
